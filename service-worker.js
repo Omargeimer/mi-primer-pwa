@@ -42,7 +42,7 @@ self.addEventListener('activate', e => {
 
 // Intercepta las solicitudes de red y responde con los recursos en caché si están disponibles
 self.addEventListener('fetch', e => {
-    e.respondWith(  // Asegúrate de que estás usando e.respondWith, no e.responseWith
+    e.respondWith(  // Usa e.respondWith
         caches.match(e.request)
         .then(res => {
             if (res) {
